@@ -97,4 +97,65 @@ const CHARACTERS = [
     recruitCost: 700,
     passive: { name: 'Farm nocturn', cost: 1300, rate: 20 }
   }
+,
+  {
+    id:'muli', name:'El Muli', answers:['marc','muli','moline','moliné','marc moline','marc moliné'],
+    image:MARC_MOLINE_AVATAR, icon:'🧥', appearsAt:1800, role:'contacte de confiança',
+    copy:{
+      encounter:'Algú t’espera sota un fanal amb cara de saber massa coses.',
+      revealed:'És el Marc Moliné. No queda clar si venia a ajudar o a supervisar.',
+      recruit:'El Muli sempre té una opinió disponible. La vols convertir en producció?'
+    },
+    dialogues:[
+      {label:'Demanar-li un veredicte sincer',effect:{cigs:90,xp:36,respect:2,stat:'charisma',amount:2}},
+      {label:'Dir-li que tot està sota control',effect:{cigs:120,xp:30,stat:'street',amount:2}},
+      {label:'Explicar-li el pla sencer sense que t’ho hagi demanat',effect:{cigs:-85,xp:16,respect:-2,stat:'endurance',amount:1}}
+    ],
+    recruitCost:1500, passive:{name:'Opinió amb criteri',cost:1900,rate:34}
+  },
+  {
+    id:'gijon', name:'El Filòsof', answers:['marc','gijon','gijón','marc gijon','marc gijón','xixo','chicho','filosof','filòsof'],
+    image:MARC_GIJON_AVATAR, icon:'🎙️', appearsAt:3800, role:'pensador nocturn',
+    copy:{
+      encounter:'Sents una frase molt ben construïda que ningú havia demanat.',
+      revealed:'És el Marc Gijón. Ha vingut amb una teoria, una rèplica i el final encara per escriure.',
+      recruit:'El Filòsof pot transformar qualsevol pausa incòmoda en una idea amb rendiment.'
+    },
+    dialogues:[
+      {label:'Preguntar-li què en pensa de debò',effect:{cigs:180,xp:48,respect:3,stat:'charisma',amount:2}},
+      {label:'Fer que la teoria serveixi per farmejar',effect:{cigs:240,xp:40,stat:'street',amount:3}},
+      {label:'Dir «literalment» sis cops abans que acabi',effect:{cigs:-150,xp:20,respect:-3,stat:'endurance',amount:1}}
+    ],
+    recruitCost:3200, passive:{name:'Idea que dona voltes',cost:4100,rate:68}
+  },
+  {
+    id:'berni', name:'El Berni', answers:['bernat','berni','bernat capdevila'],
+    image:BERNAT_CAPDEVILA_AVATAR, icon:'🗂️', appearsAt:7600, role:'aliat metòdic',
+    copy:{
+      encounter:'Hi ha algú que sembla haver arribat amb el pla de la nit en tres versions.',
+      revealed:'És el Bernat Capdevila. Té cara de saber quin és el següent pas, cosa que ja és sospitosa.',
+      recruit:'El Berni pot posar ordre al caos. O almenys numerar-lo.'
+    },
+    dialogues:[
+      {label:'Demanar-li que posi ordre a la ruta',effect:{cigs:420,xp:58,respect:4,stat:'street',amount:3}},
+      {label:'Escoltar el pla fins al final',effect:{cigs:280,xp:52,stat:'endurance',amount:3}},
+      {label:'Improvisar una reunió amb ordre del dia inventat',effect:{cigs:-260,xp:24,respect:-3,stat:'charisma',amount:1}}
+    ],
+    recruitCost:6500, passive:{name:'Full de ruta mental',cost:8200,rate:140}
+  },
+  {
+    id:'marta', name:'La Drogueria', answers:['marta','droga','drogues'],
+    image:MARTA_AVATAR, icon:'🧪', appearsAt:14500, role:'contacte de risc baix',
+    copy:{
+      encounter:'Veus unes ulleres enormes reflectint el neó. Algú ja ha detectat que aquesta nit s’allarga.',
+      revealed:'És la Marta. Parla amb calma, que és exactament el que fa més sospitosa la situació.',
+      recruit:'La Marta sap trobar solucions estranyament eficients quan la nit es complica.'
+    },
+    dialogues:[
+      {label:'Preguntar si té un pla tranquil',effect:{cigs:760,xp:72,respect:5,stat:'charisma',amount:3}},
+      {label:'Demanar-li una solució creativa',effect:{cigs:900,xp:65,stat:'street',amount:4}},
+      {label:'Dir que tens una idea millor i no explicar quina',effect:{cigs:-520,xp:30,respect:-4,stat:'endurance',amount:1}}
+    ],
+    recruitCost:12500, passive:{name:'Solució inesperada',cost:15800,rate:285}
+  }
 ];
