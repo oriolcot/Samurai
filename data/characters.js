@@ -59,7 +59,7 @@ const CHARACTERS = [
     name: 'El Pianista del Reina',
     answers: ['cristobal', 'cristóbal', 'Cristobal', 'Cristóbal'],
     icon: '🍸',
-    image: 'assets/cristobal.jpg',
+    image: CRISTOBAL_AVATAR,
     appearsAt: 360,
     role: 'font de rumors',
     copy: {
@@ -81,7 +81,7 @@ const CHARACTERS = [
     name: 'El Company del V Rising',
     answers: ['inigo', 'iñigo', 'íñigo', 'Iñigo', 'Íñigo'],
     icon: '⚔️',
-    image: 'assets/inigo.jpg',
+    image: INIGO_AVATAR,
     appearsAt: 800,
     role: 'aliat de llegenda',
     copy: {
