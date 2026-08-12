@@ -1,2 +1,2 @@
 # Samurai
-Ronin Trist: L'Últim Cigarret
+Ronin Trist 2: El periple del Ninja
