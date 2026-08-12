@@ -9,7 +9,8 @@ function normaliseAnswer(value){
     .replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
 }
 function availableQuiz(){
-  return QUIZZES.find(quiz=>!game.quizAnswered.includes(quiz.id));
+  let choices=QUIZZES.filter(quiz=>!game.quizAnswered.includes(quiz.id));
+  return choices[Math.floor(Math.random()*choices.length)];
 }
 function maybeOpenQuiz(){
   let quiz=availableQuiz();
