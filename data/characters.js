@@ -41,12 +41,12 @@ const CHARACTERS = [
     appearsAt: 140,
     role: 'contacte improbable',
     copy: {
-      encounter: 'Apareix amb les mans plenes de nata pastissera. Sembla de bon humor, però li preguntes que què tal, i s'enfada. Amb tu, amb el Muli, i amb el Cot.',
-      revealed: 'És la Ivette. Ha tingut un molt mal dia. Uns dels gossos lletjos s'ha de tornar a operar.',
+      encounter: "Apareix amb les mans plenes de nata pastissera. Sembla de bon humor, però li preguntes que què tal, i s'enfada. Amb tu, amb el Muli, i amb el Cot.",
+      revealed: "És la Ivette. Ha tingut un molt mal dia. Uns dels gossos lletjos s'ha de tornar a operar.",
       recruit: 'La Ivette pot convertir el seu mal humor en una petita ajuda permanent. La reclutes?'
     },
     dialogues: [
-      { label: 'Seguir-li el rotllo, no dir res que l'enfadi més', effect: { cigs: 30, xp: 20, stat: 'street', amount: 1 } },
+      { label: "Seguir-li el rotllo, no dir res que l'enfadi més", effect: { cigs: 30, xp: 20, stat: 'street', amount: 1 } },
       { label: 'Preguntar si sou més que amics', effect: { respect: 4, xp: 150, stat: 'charisma', amount: 3 } },
       { label: 'No contestar-li en dues setmanes, perque no saps què dir-li', effect: { cigs: -35, xp: 2, stat: 'endurance', amount: 3, respect: -2 } }
     ],
