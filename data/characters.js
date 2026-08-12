@@ -57,8 +57,9 @@ const CHARACTERS = [
   {
     id: 'reina',
     name: 'El Pianista del Reina',
-    answers: ['cristobal', 'cristóbal'],
+    answers: ['cristobal', 'cristóbal', 'Cristobal', 'Cristóbal'],
     icon: '🍸',
+    image: 'assets/cristobal.jpg',
     appearsAt: 360,
     role: 'font de rumors',
     copy: {
@@ -78,8 +79,9 @@ const CHARACTERS = [
   {
     id: 'vampire',
     name: 'El Company del V Rising',
-    answers: ['Íñigo'],
+    answers: ['inigo', 'iñigo', 'íñigo', 'Iñigo', 'Íñigo'],
     icon: '⚔️',
+    image: 'assets/inigo.jpg',
     appearsAt: 800,
     role: 'aliat de llegenda',
     copy: {
