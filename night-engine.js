@@ -18,7 +18,7 @@ function passiveRate(){
 
 function tabAlerts(){
   return {
-    home:CHARACTERS.some(x=>game.cigs>=x.appearsAt&&!game.seen.includes(x.id))||game.dramaEventPending||finalReady(),
+    home:CHARACTERS.some(x=>game.cigs>=appearanceAt(x)&&!game.seen.includes(x.id))||game.dramaEventPending||finalReady(),
     people:CHARACTERS.some(x=>game.seen.includes(x.id)&&(!game.recruited.includes(x.id)?game.cigs>=x.recruitCost:game.cigs>=relationCost(x))),
     night:unlockedLocations().length>1&&!game.nightSeen,
     rpg:PERKS.some(x=>level()>=x.level&&!game.perks.includes(x.id)),
@@ -32,7 +32,7 @@ function nav(){
 }
 
 function home(){
-  let cards=CHARACTERS.filter(x=>game.cigs>=x.appearsAt&&!game.seen.includes(x.id)).map(x=>`<article class="card"><span class="tag">TROBALLA</span><h3>${x.icon} ${x.name}</h3><p>Una presència coneguda s’acosta.</p><button class="go" onclick="openEncounter('${x.id}')">VEURE QUÈ PASSA</button></article>`);
+  let cards=CHARACTERS.filter(x=>game.cigs>=appearanceAt(x)&&!game.seen.includes(x.id)).map(x=>`<article class="card"><span class="tag">TROBALLA</span><h3>${x.icon} ${x.name}</h3><p>Una presència coneguda s’acosta.</p><button class="go" onclick="openEncounter('${x.id}')">VEURE QUÈ PASSA</button></article>`);
   if(game.dramaEventPending)cards.unshift(`<article class="card drama-card"><span class="tag">DRAMA MÀXIM</span><h3>💥 ${DRAMA_EVENT.title}</h3><p>${DRAMA_EVENT.text}</p><button class="go" onclick="openDrama()">FER-HI FRONT</button></article>`);
   if(finalReady()&&!game.finished)cards.unshift(`<article class="card final-card"><span class="tag">MISSIÓ FINAL</span><h3>🌙 ${FINAL_NIGHT.title}</h3><p>${FINAL_NIGHT.text}</p><button class="go" onclick="openFinal()">TRIAR COM ACABA</button></article>`);
   return `<span class="label">DIARI DE NIT · ${currentLocation().icon} ${currentLocation().name}</span><h2 class="headline">Què està passant?</h2>${cards.join('')||'<div class="status">Segueix fumant: la nit encara amaga nous reptes.</div>'}`;
