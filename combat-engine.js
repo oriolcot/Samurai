@@ -42,7 +42,7 @@ function combatMove(move){
     let critical=Math.random()<combatCrit(),damage=combatPower()+(critical?Math.max(2,game.stats.charisma):0);
     state.hp-=damage;say(critical?`RÈPLICA CRÍTICA · ${damage} d’impacte`:`Aguantes el tipus · ${damage} d’impacte`);
   }else{
-    state.guard=2+combatArmor();state.youHp=Math.min(state.maxHp,state.youHp+1+Math.floor(game.stats.endurance/4));say('Respirar també és una tàctica.');
+    state.guard=2+combatArmor();state.youHp=Math.min(state.maxHp,state.youHp+1+Math.floor(game.stats.endurance/4)+(has('tempo')?1:0));say(has('tempo')?'Sang freda · recuperes un punt extra.':'Respirar també és una tàctica.');
   }
   if(state.hp<=0)return combatWin(rival);
   let incoming=Math.max(1,rival.power-combatArmor()-state.guard);
