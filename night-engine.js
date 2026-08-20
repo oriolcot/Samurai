@@ -22,7 +22,7 @@ function tabAlerts(){
     people:CHARACTERS.some(x=>game.seen.includes(x.id)&&(!game.recruited.includes(x.id)?game.cigs>=x.recruitCost:game.cigs>=relationCost(x))),
     night:unlockedLocations().length>1&&!game.nightSeen,
     rpg:PERKS.some(x=>level()>=x.level&&!game.perks.includes(x.id)),
-    shop:ITEMS.some(x=>game.cigs>=x.appearsAt&&!game.shopSeen.includes(x.id))
+    shop:ITEMS.some(x=>isItemVisible(x)&&!game.shopSeen.includes(x.id))
   };
 }
 
@@ -44,7 +44,7 @@ function night(){
 }
 
 function render(){ save();$('#cigs').textContent=n(game.cigs);$('#titleLevel').textContent=`Nivell ${level()} · ${game.respect} respecte`;$('#rate').textContent=passiveRate()?`+${passiveRate().toFixed(2)} / s`:'+1 per acció';nav();$('#sheet').innerHTML=({home,people,night,rpg,shop})[tab](); }
-function setTab(x){tab=x;if(x==='shop')ITEMS.filter(item=>game.cigs>=item.appearsAt).forEach(item=>{if(!game.shopSeen.includes(item.id))game.shopSeen.push(item.id)});if(x==='night')game.nightSeen=true;render()}
+function setTab(x){tab=x;if(x==='shop')ITEMS.filter(isItemVisible).forEach(item=>{if(!game.shopSeen.includes(item.id))game.shopSeen.push(item.id)});if(x==='night')game.nightSeen=true;render()}
 function travel(id){let place=LOCATIONS.find(x=>x.id===id);if(!place||!place.unlock(game))return;game.location=id;say(`${place.name} · nova ruta de nit`);render()}
 
 function applyNightOutcome(outcome){
