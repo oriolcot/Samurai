@@ -65,7 +65,7 @@ function combatLose(rival){
 }
 function tabAlerts(){
   return {
-    home:CHARACTERS.some(x=>game.cigs>=x.appearsAt&&!game.seen.includes(x.id))||game.dramaEventPending||finalReady(),
+    home:CHARACTERS.some(x=>game.cigs>=appearanceAt(x)&&!game.seen.includes(x.id))||game.dramaEventPending||finalReady(),
     people:CHARACTERS.some(x=>game.seen.includes(x.id)&&(!game.recruited.includes(x.id)?game.cigs>=x.recruitCost:game.cigs>=relationCost(x))),
     night:combatReady()||(unlockedLocations().length>1&&!game.nightSeen),
     rpg:PERKS.some(x=>level()>=x.level&&!game.perks.includes(x.id)),
